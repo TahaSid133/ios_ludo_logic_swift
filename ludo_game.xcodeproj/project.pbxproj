@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		57F01E1520E52AC50084A9EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F01E1420E52AC50084A9EA /* AppDelegate.swift */; };
-		57F01E1720E52AC50084A9EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F01E1620E52AC50084A9EA /* ViewController.swift */; };
+		57F01E1720E52AC50084A9EA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F01E1620E52AC50084A9EA /* GameViewController.swift */; };
 		57F01E1A20E52AC50084A9EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F01E1820E52AC50084A9EA /* Main.storyboard */; };
 		57F01E1C20E52AC70084A9EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F01E1B20E52AC70084A9EA /* Assets.xcassets */; };
 		57F01E1F20E52AC70084A9EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F01E1D20E52AC70084A9EA /* LaunchScreen.storyboard */; };
+		57F01E2720E5403A0084A9EA /* NumberOfPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F01E2620E5403A0084A9EA /* NumberOfPlayersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		57F01E1120E52AC50084A9EA /* ludo_game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ludo_game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F01E1420E52AC50084A9EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		57F01E1620E52AC50084A9EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57F01E1620E52AC50084A9EA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		57F01E1920E52AC50084A9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57F01E1B20E52AC70084A9EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57F01E1E20E52AC70084A9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57F01E2020E52AC70084A9EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57F01E2620E5403A0084A9EA /* NumberOfPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfPlayersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				57F01E1420E52AC50084A9EA /* AppDelegate.swift */,
-				57F01E1620E52AC50084A9EA /* ViewController.swift */,
+				57F01E1620E52AC50084A9EA /* GameViewController.swift */,
 				57F01E1820E52AC50084A9EA /* Main.storyboard */,
 				57F01E1B20E52AC70084A9EA /* Assets.xcassets */,
 				57F01E1D20E52AC70084A9EA /* LaunchScreen.storyboard */,
 				57F01E2020E52AC70084A9EA /* Info.plist */,
+				57F01E2620E5403A0084A9EA /* NumberOfPlayersViewController.swift */,
 			);
 			path = ludo_game;
 			sourceTree = "<group>";
@@ -135,8 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57F01E1720E52AC50084A9EA /* ViewController.swift in Sources */,
+				57F01E1720E52AC50084A9EA /* GameViewController.swift in Sources */,
 				57F01E1520E52AC50084A9EA /* AppDelegate.swift in Sources */,
+				57F01E2720E5403A0084A9EA /* NumberOfPlayersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
