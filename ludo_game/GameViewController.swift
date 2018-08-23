@@ -170,68 +170,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDat
         CreateGameGridView()
      }
     
-    func hideEverythingExceptDice(){
-        selectPlayerToPlayWith.isHidden = true
-        playTokenButton.isHidden = true
-        displaySelectLable.isHidden = true
-       // playingText.isHidden = true
-        universalPosition.isHidden = true
-    }
     
-    func setPlayerToPlay(){
-        switch currentPlayer {
-        case 0:
-            player_1_UILabel.textColor = UIColor.magenta
-            playingText.text = "Player 1's turn,roll the dice"
-            player_2_UILabel.textColor = UIColor.black
-            player_3_UILabel.textColor = UIColor.black
-            player_4_UILabel.textColor = UIColor.black
-            currentColor = UIColor.blue
-        case 1:
-            
-            player_2_UILabel.textColor = UIColor.magenta
-            playingText.text = "Player 2's turn,roll the dice"
-            player_1_UILabel.textColor = UIColor.black
-            player_3_UILabel.textColor = UIColor.black
-            player_4_UILabel.textColor = UIColor.black
-            currentColor = UIColor.yellow
-        case 2:
-            
-            player_3_UILabel.textColor = UIColor.magenta
-            playingText.text = "Player 3's turn,roll the dice"
-            player_1_UILabel.textColor = UIColor.black
-            player_2_UILabel.textColor = UIColor.black
-            player_4_UILabel.textColor = UIColor.black
-            currentColor = UIColor.green
-        case 3:
-            
-            player_4_UILabel.textColor = UIColor.magenta
-            playingText.text = "Player 4's turn,roll the dice"
-            player_2_UILabel.textColor = UIColor.black
-            player_3_UILabel.textColor = UIColor.black
-            player_1_UILabel.textColor = UIColor.black
-            currentColor = UIColor.red
-            
-        default:
-            playingText.text = "Something wierd is happening"
-        }
-        
-        
-        
-    }
-    
-    
-    
-    
-    func  AddPlayers(){
-        for i in 1...numberOfPlayers{
-            
-            let tokenTrackerObj = tokenTraker(position: 0, universalPosition: 0)
-            let tokens = Tokens(token_one: tokenTrackerObj, token_two: tokenTrackerObj, token_three: tokenTrackerObj, token_four: tokenTrackerObj)
-            players.append(player(playerNumber: i, tokens:tokens))
-            
-        }
-    }
     
     func AddDice(){
         let dice_no_image = UIImage(named: "dice_no_number.png")
