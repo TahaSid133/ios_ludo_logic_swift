@@ -1,4 +1,5 @@
- @objc func playTokenButtonClicked(sender:UIButton){
+Class Helper { 
+@objc func playTokenButtonClicked(sender:UIButton){
         
         
         //Increment the token position and universal position accordingly if the token position is greter than 0 or else increse the token position by one
@@ -222,5 +223,5 @@
         
       
         
-        
+}
     }
