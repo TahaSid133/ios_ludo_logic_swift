@@ -1,5 +1,133 @@
 Class Helper { 
+      @objc  func rollDice(sender:UIButton){
         
+        tokens = []
+        diceRoll = Int(arc4random_uniform(6) + 1)
+        let image = UIImage(named: "Dice\(diceRoll).png")
+        dice.setImage(image, for: .normal)
+        
+        //Choose token to play with
+        
+        
+        
+        //Validate and play with token
+       
+        //If the dice is 6, put all the tokens whos positions are greater than zero that are less than 6 of the end count
+        
+        let a = players[currentPlayer].tokens.token_one.position
+        let b = players[currentPlayer].tokens.token_two.position
+        let c = players[currentPlayer].tokens.token_three.position
+        let d = players[currentPlayer].tokens.token_four.position
+        
+        switch diceRoll {
+        case 6:
+            if  a < (board_max_count-Int(diceRoll)){
+                tokens.append("a")
+            }
+            if  b < (board_max_count-Int(diceRoll)){
+                tokens.append("b")
+            }
+            if  c < (board_max_count-Int(diceRoll)){
+                tokens.append("c")
+            }
+            if  d < (board_max_count-Int(diceRoll)){
+                tokens.append("d")
+            }
+           
+        default:
+            if a > 0 && a < (board_max_count-Int(diceRoll)){
+                tokens.append("a")
+            }
+            if b > 0 && b < (board_max_count-Int(diceRoll)){
+                tokens.append("b")
+            }
+            if c > 0 && c < (board_max_count-Int(diceRoll)){
+                tokens.append("c")
+            }
+            if d > 0 && d < (board_max_count-Int(diceRoll)){
+                tokens.append("d")
+            }
+           
+        }
+        
+        
+        if tokens.count > 0{
+            showPickerViewAndSelectLabel()
+            playingText.text = "Player \(players[currentPlayer].playerNumber), choose token"
+            self.selectPlayerToPlayWith.reloadAllComponents()
+            dice.isEnabled = false
+            return
+        }
+        
+        currentPlayer += 1
+        if currentPlayer == numberOfPlayers{
+            currentPlayer = 0
+        }
+        setDiceIntImage()
+        setPlayerToPlay()
+        
+        
+        
+        
+        
+    }
+    
+    func setDiceIntImage(){
+        dice.isEnabled = true
+        //let intImage = UIImage(named: "dice_no_number.png")
+      //  dice.setImage(intImage, for: .normal)
+    }
+    
+    func showPickerViewAndSelectLabel(){
+        
+        selectPlayerToPlayWith.isHidden = false
+        displaySelectLable.isHidden = false
+    }
+    
+    func sendBackToHouse(universalPos:Int){
+        for i in 0...numberOfPlayers-1{
+            if i == currentPlayer {
+                continue
+            }
+            if universalPos == players[i].tokens.token_one.universalPosition{
+                players[i].tokens.token_one.universalPosition = 0
+                players[i].tokens.token_one.position = 0
+            }
+            if universalPos == players[i].tokens.token_two.universalPosition{
+                players[i].tokens.token_two.universalPosition = 0
+                players[i].tokens.token_two.position = 0
+            }
+            if universalPos == players[i].tokens.token_three.universalPosition{
+                players[i].tokens.token_three.universalPosition = 0
+                players[i].tokens.token_three.position = 0
+            }
+            if universalPos == players[i].tokens.token_four.universalPosition{
+                players[i].tokens.token_four.universalPosition = 0
+                players[i].tokens.token_four.position = 0
+            }
+        }
+    }
+    
+    
+   
+    
+    func gameOver(){
+        dice.isHidden = true
+        selectPlayerToPlayWith.isHidden = true
+        displaySelectLable.isHidden = true
+        playTokenButton.isHidden = true
+        
+        playingText.text = "Game over, player \(players[currentPlayer].playerNumber) is the winner"
+        
+        
+    }
+    
+    func  displaySelectLabel(){
+        displaySelectLable.frame = CGRect(x: Int(view.frame.width/2-40), y: y_position_t_4+50, width: 150, height: 30)
+        displaySelectLable.text = "Select Token"
+        view.addSubview(displaySelectLable)
+        
+    }   
 func hideEverythingExceptDice(){
         selectPlayerToPlayWith.isHidden = true
         playTokenButton.isHidden = true
